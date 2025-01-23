@@ -2,11 +2,33 @@
 <html lang="en">
     <head>
         <title>Search</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
     </head>
     <body>
-        <form action="https://www.google.com/search">
-            <input type="text" name="q">
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Google Search</a></li>
+                <li><a href="image.html">Image Search</a></li>
+                <li><a href="advanced.html">Advanced Search</a></li>
+            </ul>
+        </nav>
+        <form class="search-bar" action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" placeholder="Search Google or type a URL">
             <input type="submit" value="Google Search">
         </form>
+        <div class="button-container">
+            <button type="button" class="search-button" onclick="addKeyValuePair()">I'm Feeling Lucky</button>
+        </div>
+        <script>
+            function addKeyValuePair() {
+                const form = document.querySelector('.search-bar');
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'btnI';
+                input.value = 'I\'m Feeling Lucky';
+                form.appendChild(input);
+                form.submit();
+            }
+        </script>
     </body>
 </html>
